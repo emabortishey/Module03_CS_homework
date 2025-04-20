@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.Metrics;
 using System;
 using static System.Console;
+using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 // ZADANIE 1
 
@@ -184,4 +186,64 @@ int[] mass_filtration(ref int[] orig_mass, int[] filt_mass)
 
     // возвращаем чистый буферный массив
     return buff_mass_clear;
+}
+
+// ZADANIE 4
+
+/*
+
+Создайте класс «Веб-сайт». Необходимо хранить в
+полях класса: название сайта, путь к сайту, описание
+сайта, ip адрес сайта. Реализуйте методы класса для ввода
+данных, вывода данных, реализуйте доступ к отдельным
+полям через методы класса. 
+
+*/
+
+Web_Site RedWeb = new Web_Site("RedWeb", "RedWeb.ah", "RedWeb - your choice our pleasure.", 1247649356);
+
+WriteLine("\nИспытание вывода с помощью метода print:\n");
+RedWeb.print();
+WriteLine($"\nИспытание вывода с помощью гетеров:\n\nНазвание: {RedWeb.Name}, \nПуть: {RedWeb.Way} \nОписание: {RedWeb.Description} \nАйпи адрес: {RedWeb.IP}");
+
+public class Web_Site
+{
+    string _name;
+    string _way;
+    string _description;
+    long _ip;
+
+    public Web_Site(string name_p, string way_p, string desc_p, long ip_p)
+    {
+        _name = name_p;
+        _way = way_p;
+        _description = desc_p;
+        _ip = ip_p;
+    }
+
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+    public string Way
+    {
+        get { return _way; }
+        set { _way = value; }
+    }
+    public string Description
+    {
+        get { return _description; }
+        set { _description = value; }
+    }
+    public long IP
+    {
+        get { return _ip; }
+        set { _ip = value; }
+    }
+
+    public void print()
+    {
+        WriteLine($"Название: {_name}, \nПуть: {_way} \nОписание: {_description} \nАйпи адрес: {_ip}");
+    }
 }
