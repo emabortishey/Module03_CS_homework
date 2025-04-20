@@ -234,7 +234,7 @@ WriteLine("\nИспытание вывода с помощью метода prin
 // проверка вывода с методом принт
 journal.print();
 // проверка выводов с помощью гетеров
-WriteLine($"Название: {journal.Name} \nГод создания: {journal.Year} \nОписание: {journal.Description} \nКонтактный номер: {journal.Number} \nЭмейл: {journal.Email}");
+WriteLine($"\nИспытание вывода с помощью гетеров: \n\nНазвание: {journal.Name} \nГод создания: {journal.Year} \nОписание: {journal.Description} \nКонтактный номер: {journal.Number} \nЭмейл: {journal.Email}");
 
 
 // ZADANIE 6
@@ -258,7 +258,7 @@ WriteLine("\nИспытание вывода с помощью метода prin
 // проверка вывода с методом принт
 wallmart.print();
 // проверка выводов с помощью гетеров
-WriteLine($"Название: {wallmart.Name} \nАдрес: {wallmart.Adress} \nОписание: {wallmart.Description} \nКонтактный номер: {wallmart.Number} \nЭмейл: {wallmart.Email}");
+WriteLine($"\nИспытание вывода с помощью гетеров: \n\nНазвание: {wallmart.Name} \nАдрес: {wallmart.Adress} \nОписание: {wallmart.Description} \nКонтактный номер: {wallmart.Number} \nЭмейл: {wallmart.Email}");
 
 
 // класс ЗАДАНИЯ 4
@@ -310,6 +310,8 @@ public class Magazine
     string _name;
     int _year;
     string _description;
+    // номер решила не делать int или long чтобы было проще записать
+    // в случае чего со всякими тирешками и плюсами
     string _number;
     string _email;
 
@@ -360,6 +362,8 @@ public class Market
     string _name;
     string _adress;
     string _description;
+    // номер решила не делать int или long чтобы было проще записать
+    // в случае чего со всякими тирешками и плюсами
     string _number;
     string _email;
 
