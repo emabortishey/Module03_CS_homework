@@ -29,18 +29,32 @@ void print_square(char symb, int side)
 
 // ZADANIE 2
 
+/*
+
+Напишите метод, который проверяет является ли
+переданное число «палиндромом». Число передаётся в
+качестве параметра. Если число палиндром 
+нужно вернуть из метода true, иначе false.
+
+Палиндром — число, которое читается одинаково как
+справа налево, так и слева направо.
+
+*/
+
 // т.к. это не особо важно, принимаю у пользователя
 // число строкой для удосбтва в будущем
+WriteLine("\nВведите число для проверки на палиндром: ");
+
 string user_numb = ReadLine();
 
 // проверка результата работы метода и вывод
 if (if_poly(user_numb))
 {
-    WriteLine("Переданное число является паллиндромом.");
+    WriteLine("Переданное число является палиндромом.");
 }
 else
 {
-    WriteLine("Переданное число не является паллиндромом.");
+    WriteLine("Переданное число не является палиндромом.");
 }
 
 bool if_poly(string number)
@@ -76,4 +90,67 @@ bool if_poly(string number)
     {
         return false;
     }
+}
+
+// ZADANIE 3
+
+/*
+
+Напишите метод, фильтрующий массив на основании
+переданных параметров. Метод принимает параметры:
+оригинальный_массив, массив_с_данными_для_фильтрации.
+
+Метод возвращает оригинальный массив без элементов, которые есть в массиве для фильтрации.
+Например:
+1 2 6 - 1 88 7 6 — оригинальный массив;
+6 88 7 — массив для фильтрации;
+1 2 - 1 — результат работы метода.
+
+*/
+
+int[] orig = { 4, 1, 2, 3, 4, 2 };
+int[] filt = { 2, 4 };
+orig = mass_filtration(ref orig, filt);
+
+WriteLine("Строка после фильтрации: " + string.Join(", ", orig));
+
+int[] mass_filtration(ref int[] orig_mass, int[] filt_mass)
+{
+    int[] buff_mass = new int[orig_mass.Length];
+    int counter = 0;
+    int deleted_count = 0;
+    bool check = false;
+
+    for (int i = 0; i < buff_mass.Length; i++)
+    {
+        foreach(int j in filt_mass)
+        {
+            if(orig_mass[i] == j)
+            {
+                check = true;
+            }
+        }
+
+        if (check == false) 
+        {
+            buff_mass[counter] = orig_mass[i];
+
+            counter++;
+        }
+        else
+        {
+            deleted_count++;
+
+            check = false;
+        }
+    }
+
+    int[] buff_mass_clear = new int[buff_mass.Length - deleted_count];
+
+    for(int i = 0;i<buff_mass.Length-deleted_count;i++)
+    {
+        buff_mass_clear[i] = buff_mass[i];
+    }
+
+    return buff_mass_clear;
 }
