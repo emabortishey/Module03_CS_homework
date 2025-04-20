@@ -24,3 +24,16 @@ void print_square(char symb, int side)
         WriteLine();
     }
 }
+
+// ZADANIE 2
+
+string number = ReadLine();
+char[] first_half = new char[(number.Length)/2];
+char[] second_half = new char[(number.Length) / 2];
+
+if(number.Length % 2 == 0)
+{
+    number.CopyTo(0, first_half, 0, (number.Length) / 2);
+
+    number.CopyTo(((number.Length - 1) / 2)+1, second_half, 0, (number.Length) / 2);
+}
