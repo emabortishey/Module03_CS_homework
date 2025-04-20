@@ -200,10 +200,15 @@ int[] mass_filtration(ref int[] orig_mass, int[] filt_mass)
 
 */
 
+// создание и заполнение экземпляра класса с помощью конструктора
 Web_Site RedWeb = new Web_Site("RedWeb", "RedWeb.ah", "RedWeb - your choice our pleasure.", 1247649356);
 
+// тесты над функционалом класса
+
 WriteLine("\nИспытание вывода с помощью метода print:\n");
+// проверка вывода с методом принт
 RedWeb.print();
+// проверка выводов с помощью гетеров
 WriteLine($"\nИспытание вывода с помощью гетеров:\n\nНазвание: {RedWeb.Name}, \nПуть: {RedWeb.Way} \nОписание: {RedWeb.Description} \nАйпи адрес: {RedWeb.IP}");
 
 public class Web_Site
@@ -247,3 +252,4 @@ public class Web_Site
         WriteLine($"Название: {_name}, \nПуть: {_way} \nОписание: {_description} \nАйпи адрес: {_ip}");
     }
 }
+
