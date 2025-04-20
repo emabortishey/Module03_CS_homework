@@ -10,6 +10,9 @@
 
 */
 
+WriteLine("Квадрат со стороной 5 из символов *:\n");
+print_square('*', 5);
+
 void print_square(char symb, int side)
 {
     for(int i = 0; i< side; i++)
