@@ -232,9 +232,34 @@ Magazine journal = new Magazine("Grizt kakashki", 2008, "grizt kakashki....", "+
 
 WriteLine("\nИспытание вывода с помощью метода print:\n");
 // проверка вывода с методом принт
-RedWeb.print();
+journal.print();
 // проверка выводов с помощью гетеров
 WriteLine($"Название: {journal.Name} \nГод создания: {journal.Year} \nОписание: {journal.Description} \nКонтактный номер: {journal.Number} \nЭмейл: {journal.Email}");
+
+
+// ZADANIE 6
+
+/*
+
+Создайте класс «Магазин». Необходимо хранить в
+полях класса: название магазина, адрес, описание 
+профиля магазина, контактный телефон, контактный e-mail.
+Реализуйте методы класса для ввода данных, вывода
+данных, реализуйте доступ к отдельным полям через
+методы класса.
+
+*/
+
+Market wallmart = new Market("kotyata krytie", "AAAAAAAAAA", "ya lublu kotyat....", "+2983858312", "fartbreather228@gmail.com");
+
+// тесты над функционалом класса
+
+WriteLine("\nИспытание вывода с помощью метода print:\n");
+// проверка вывода с методом принт
+wallmart.print();
+// проверка выводов с помощью гетеров
+WriteLine($"Название: {wallmart.Name} \nАдрес: {wallmart.Adress} \nОписание: {wallmart.Description} \nКонтактный номер: {wallmart.Number} \nЭмейл: {wallmart.Email}");
+
 
 // класс ЗАДАНИЯ 4
 public class Web_Site
@@ -279,7 +304,7 @@ public class Web_Site
     }
 }
 
-//класс ЗАДАНИЯ 5
+// класс ЗАДАНИЯ 5
 public class Magazine
 {
     string _name;
@@ -326,5 +351,55 @@ public class Magazine
     public void print()
     {
         WriteLine($"Название: {_name} \nГод создания: {_year} \nОписание: {_description} \nКонтактный номер: {_number} \nЭмейл: {_email}");
+    }
+}
+
+// класс ЗАДАНИЯ 6
+public class Market
+{
+    string _name;
+    string _adress;
+    string _description;
+    string _number;
+    string _email;
+
+    public Market(string name_p, string adress_p, string desc_p, string number_p, string email_p)
+    {
+        _name = name_p;
+        _adress = adress_p;
+        _description = desc_p;
+        _number = number_p;
+        _email = email_p;
+    }
+
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+    public string Adress
+    {
+        get { return _adress; }
+        set { _adress = value; }
+    }
+    public string Description
+    {
+        get { return _description; }
+        set { _description = value; }
+    }
+    public string Number
+    {
+        get { return _number; }
+        set { _number = value; }
+    }
+    public string Email
+    {
+        get { return _email; }
+        set { _email = value; }
+    }
+
+    public void print()
+    {
+        WriteLine($"Название: {_name} \nАдрес магазина: {_adress} \nОписание: {_description} \nКонтактный номер: {_number} \nЭмейл: {_email}");
     }
 }
